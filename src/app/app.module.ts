@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { MeuComponenteComponent } from './meu-componente/meu-componente.component';
 import {FormsModule} from '@angular/forms';
+import { AlteraCorDirective } from './altera-cor.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MeuComponenteComponent
+    MeuComponenteComponent,
+    AlteraCorDirective
   ],
   imports: [
     BrowserModule,

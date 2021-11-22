@@ -33,7 +33,7 @@ export class MeuComponenteComponent implements OnInit, AfterViewInit {
   recuperarStyle(elemento) {
     if (elemento.value != (null || undefined)) {
       return {
-        display: elemento.value == 2 ? 'none': 'block'
+        color: elemento.value == 2 ? 'red': 'black'
       }
     }
   }
