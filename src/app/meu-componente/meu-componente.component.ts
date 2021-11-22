@@ -20,14 +20,22 @@ export class MeuComponenteComponent implements OnInit, AfterViewInit {
   }
 
   recuperarClasseEstilo(element) {
-    if (element == (null || undefined)) {
-      return;
+    if (element != (null || undefined)) {
+      return {
+        classe1: (element.value == 1),
+        classe2: (element.value == 2),
+        classe3: (element.value == 3),
+        classeMaior1: (element.value > 1)
+      };
     }
-    return {
-      classe1: (element.value == 1),
-      classe2: (element.value == 2),
-      classe3: (element.value == 3),
-      classeMaior1: (element.value > 1)
-    };
+  }
+
+  recuperarStyle(elemento) {
+    if (elemento.value != (null || undefined)) {
+      return {
+        display: elemento.value == 2 ? 'none': 'block'
+      }
+    }
   }
 }
+
