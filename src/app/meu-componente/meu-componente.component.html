@@ -1,1 +1,9 @@
-<h1>TreinaWeb</h1>
+<select (change)="0" #minhaClasse >
+  <option value="1" >Classe 1</option>
+  <option value="2" >Classe 2</option>
+  <option value="3" >Classe 3</option>
+</select>
+
+<div [ngClass]="recuperarClasseEstilo(minhaClasse)">
+ Minha Classe
+</div>
