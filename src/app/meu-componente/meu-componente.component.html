@@ -1,3 +1,5 @@
-<h1>{{ nome }} - {{ atributoExterno }}</h1>
-
-<button (click)="callClick()">Click Aqui</button>
+<textarea [(ngModel)]="myStyle" ></textarea>
+<div [style]="mySafeStyle" >
+  TreinaWeb
+</div>
+<ng-content></ng-content>

@@ -1,29 +1,23 @@
-import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-meu-componente',
   templateUrl: './meu-componente.component.html',
   styleUrls: ['./meu-componente.component.css']
 })
-export class MeuComponenteComponent implements OnInit, OnDestroy {
+export class MeuComponenteComponent implements OnInit {
 
-  nome = 'Treina Web';
+  myStyle = '';
 
-  @Input('nomeExterno') atributoExterno;
-
-  @Output() myClick = new EventEmitter<any>();
-
-  constructor() { }
-
-  ngOnInit(): void {
-    console.log('Abc');
+  get mySafeStyle(){
+    return  this.sanitizer.bypassSecurityTrustStyle(this.myStyle);
   }
 
-  ngOnDestroy(): void {
-    console.log('OnDestroy');
-  }
+  constructor(
+    private sanitizer: DomSanitizer
+  ) { }
 
-  callClick() {
-    this.myClick.emit(123)
+  ngOnInit() {
   }
 }
