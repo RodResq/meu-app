@@ -10,12 +10,7 @@ export class MeuComponenteComponent implements OnInit {
 
   myStyle = '';
 
-  get mySafeStyle(){
-    return  this.sanitizer.bypassSecurityTrustStyle(this.myStyle);
-  }
-
   constructor(
-    private sanitizer: DomSanitizer
   ) { }
 
   ngOnInit() {
