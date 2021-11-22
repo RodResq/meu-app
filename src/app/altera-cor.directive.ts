@@ -1,11 +1,14 @@
-import { Directive, ElementRef } from '@angular/core';
+import { Directive, ElementRef, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[appAlteraCor]'
 })
 export class AlteraCorDirective {
 
-  constructor(private elementRef: ElementRef) {
+  constructor(
+    private elementRef: ElementRef,
+    private render: Renderer2
+    ) {
     let color = '';
     switch (Math.floor(Math.random() * 4)) {
       case 0: color = 'red'; break;
@@ -13,8 +16,7 @@ export class AlteraCorDirective {
       case 2: color = 'orange'; break;
       case 3: color = 'blue'; break;
     }
-
-    this.elementRef.nativeElement.style.backgroundColor = color;
+    this.render.setStyle(this.elementRef.nativeElement, 'background-color', color);
 
   }
 
