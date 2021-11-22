@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, Renderer2, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[appAlteraCor]'
@@ -18,6 +18,10 @@ export class AlteraCorDirective {
     }
     this.render.setStyle(this.elementRef.nativeElement, 'background-color', color);
 
+  }
+
+  @HostListener('click') recuperarClick() {
+    alert('Usando HostListener');
   }
 
 }
