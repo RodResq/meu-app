@@ -4,6 +4,6 @@
   <option value="3" >Classe 3</option>
 </select>
 
-<div [ngClass]="recuperarClasseEstilo(minhaClasse)">
+<div [style.display]="minhaClasse.value == 2 ? 'none': 'block'" >
  Minha Classe
 </div>

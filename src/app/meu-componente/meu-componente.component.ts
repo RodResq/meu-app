@@ -20,7 +20,7 @@ export class MeuComponenteComponent implements OnInit, AfterViewInit {
   }
 
   recuperarClasseEstilo(element) {
-    if (element == null) {
+    if (element == (null || undefined)) {
       return;
     }
     return {
