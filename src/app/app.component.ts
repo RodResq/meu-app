@@ -7,7 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  title = 'meu-app';
+  title = 'treinaWeb';
+
+  myValue = 5.3589;
+
+  myDate = new Date(2017, 6, 7);
+
+  myPromiise = new Promise((resolve, reject) => {
+    setTimeout(() => { resolve('TreinaWeb')}, 2000);
+  });
 
   constructor() {
   }
